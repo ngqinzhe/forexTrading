@@ -14,9 +14,9 @@ import com.oanda.v20.Context;
 public class Config {
     private Config() {}
 
-    public static final AccountID acc_ID = new AccountID("101-003-12890740-001");
-    public static final String token = "81f207da969bcb19632b033923580a72-c8e6f4f118bda1d74646f56b71761734";
-    public static final String url = "https://api-fxpractice.oanda.com";
+    public static final AccountID acc_ID = new AccountID("<Enter your account ID>");
+    public static final String token = "<Enter your OANDA API token>";
+    public static final String url = "<Enter the url => demo / live>";
     public static final Context ctx = new Context(Config.url, Config.token);
 
 }

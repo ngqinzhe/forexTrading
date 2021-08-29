@@ -10,7 +10,7 @@ public class MovingAverage {
 
     public static double get(Long window, String instrumentName, CandlestickGranularity timeframe) {
         Context ctx = Config.ctx;
-        double answer = 0;
+        double movingAverage = 0;
         try {
             InstrumentCandlesRequest request = new InstrumentCandlesRequest(new InstrumentName(instrumentName));
             request.setCount(window);
@@ -24,11 +24,11 @@ public class MovingAverage {
             for (Candlestick c : candles) {
                 sum += c.getMid().getC().doubleValue();
             }
-            answer = sum / window;
+            movingAverage = sum / window;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return answer;
+        return movingAverage;
     }
 
     public static void main(String[] args) {
